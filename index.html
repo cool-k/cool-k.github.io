@@ -199,6 +199,310 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Web随心记6" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/10/Web随心记6/" class="article-date">
+  	<time datetime="2017-09-10T05:57:30.892Z" itemprop="datePublished">2017-09-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/10/Web随心记6/">
+        博文公园(Web随心记6)
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Angular、vue、react-数据双向绑定的原理"><a href="#Angular、vue、react-数据双向绑定的原理" class="headerlink" title="Angular、vue、react 数据双向绑定的原理"></a>Angular、vue、react 数据双向绑定的原理</h2><p>AngularJS 采用“脏值检测”的方式，数据发生变更后，对于所有的数据和视图的绑定关系进行一次检测，识别是否有数据发生了改变，有变化进行处理，可能进一步引发其他数据的改变，<br>所以这个过程可能会循环 几次，一直到不再有数据变化发生后，将变更的数据发送到视图，更新页面展现。如果是手动对 ViewModel 的数据进行变更，为确保变更同步到视图，需要手动<br>触发一次“脏值检测”。</p>
+<p>VueJS 则使用 ES5 提供的 Object.defineProperty() 方法，监控对数据的操作，从而可以自动触发数据同步。并且，由于是在不同的数据上触发同步，可以精确的将变更发送给绑定的视图，<br>而不是对所有的数据都执行一次检测。</p>
+<p>React数据绑定<br>React采用这种方式，考虑虚拟DOM树的更新：<br>属性更新，组件自己处理<br>结构更新，重新“渲染”子树（虚拟DOM），找出最小改动步骤，打包DOM操作，给真实DOM树打补丁<br>单纯从数据绑定来看，React虚拟DOM没有数据绑定，因为setState()不维护上一个状态（状态丢弃），谈不上绑定<br>从数据更新机制来看，react类似于提供数据模型的方式（必须通过state更新）<br>没有双向数据绑定的话，input的双向场景要怎么实现？通过框架提供的API，手动通知数据变化，和操作DOM的方式很像</p>
+<h2 id="ES6新特性："><a href="#ES6新特性：" class="headerlink" title="ES6新特性："></a>ES6新特性：</h2><p>块级作用域<br>Let关键词，声明一个变量<br>Const关键词，声明一个常量<br>变量的解构赋值 数组解构赋值，对象的解构赋值<br>字符串扩展 Includes、检测是否包含某个字符<br>startWith、可以判断是否以某个字符开始<br>endWith、可以判断是否以某个字符结束<br>repeat、  可以重复某个字符<br>padStart/endStart可以字符串补全 Nodejs现在还不支持<br>反引号  `  定义字符串<br>数组扩展  Array.from();伪数组转数组<br>Array.of()创建数组<br>Arr.find() 发现并返回符合条件的第一个元素<br>arr.findIndex()发现并返回符合条件的第一个元素的索引值<br>函数扩展<br>箭头函数  使用“箭头”(=&gt;) 定义函数</p>
+<h2 id="Nodejs"><a href="#Nodejs" class="headerlink" title="Nodejs:"></a>Nodejs:</h2><p>Nodejs则是需要通过命令行工具以命令的形式执行。<br>Nodejs是一种运行环境<br>Nodejs是一个基于Chrome V8引擎的 JavaScript运行环境，其使用了一个事件驱动、非阻塞式I/O的模型，使其轻量又高效<br>Nodejs是一个后端开发环境<br>Nodejs需要通过命令行工具以命令的形式执行<br>宿主环境不同，依据ECMAScript标准实现的脚本的执行方式也不同，例如JavaScript必须通过script标签引入，才能在浏览器环境执行，Nodejs则需要通过命令行工具以命令的形式执行</p>
+<p>Nodejs在ECMAScript的基础上扩展并封装了许多高级特性，使得Nodejs称为一个很好的Web开发平台<br>基于Nodejs这个平台将Web开发常用的一些功能进行封装，称为模块<br>（将一堆功能封装起来，供开发者调用，称为模块）<br>1.系统模块：<br>os模块–获取当前操作系统信息<br>fs模块–文件读取和操作<br>path模块–路径处理<br>http模块–创建并启动http服务器<br>文件模块：用户模块+第三方模块</p>
+<p>2.Express框架：<br>使用Nodejs可以非常迅速的搭建服务器，而在真正的开发中，一般都会用框架进行开发，express框架是Nodejs中非常流行的框架之一；<br>Express是一个简洁而灵活的node.js web应用框架，提供了一系列强大的特性帮助我们创建各种web应用和丰富的http工具<br>Express框架的核心特性：<br>（1）可以设置中间件来响应http请求<br>（2）定义路由表执行不同的http请求动作<br>（3）可以用模板传递参数来动态渲染HTML页面</p>
+<p>3.路由：<br>是指URL地址与程序的映射关系，改变URL地址可以改变程序的执行结果</p>
+<h2 id="Express中处理请求数据格式："><a href="#Express中处理请求数据格式：" class="headerlink" title="Express中处理请求数据格式："></a>Express中处理请求数据格式：</h2><p>（1）get方式请求的参数：使用req.params/req.query接收<br>Req.params接收的参数是通过路由定义的形参 ：<br>Req.query接收的参数是地址?后面部分<br>（2）post方式请求的参数通过req.body接收；<br>必须使用中间件（body-parse）后才能使用</p>
+<h2 id="中间件："><a href="#中间件：" class="headerlink" title="中间件："></a>中间件：</h2><p>Express将请求和响应的过程划分成多个阶段，任何一个阶段都允许调用一个函数来对请求或响应做出修改，这个函数就是中间件，express使用use方法调用中间件，中间件是按照顺序执行的。<br>中间件一般用来操作请求和响应<br><a href="http://www.cnblogs.com/lianer/p/5178693.html" target="_blank" rel="external">http://www.cnblogs.com/lianer/p/5178693.html</a><br>body-parse：<br>bodyParse中间件用来解析http请求，是express默认使用的中间件之一<br>const bodyParse = require(“body-parse”);<br>//负责解析post请求过来的数据，然后将解析的结果赋值给req.body.<br>App.use(bodyParse.urlencoded({extended:false}));<br>App.post(“/”,(req, res) =&gt; {console.log(req.body)})<br>app.use(bodyParser.json());<br>app.use(bodyParser.urlencoded({ extended: false }));<br>顾名思义，bodyParser.json是用来解析json数据格式的。bodyParser.urlencoded则是用来解析我们通常的form表单提交的数据，也就是请求头中包含这样的信息：<br>Content-Type: application/x-www-form-urlencoded<br>bodyParser.urlencoded 模块用于解析req.body的数据，解析成功后覆盖原来的req.body，如果解析失败则为 {}。该模块有一个属性extended，官方介绍如下：<br>Extended()允许配置使用querystring（false）或qs（true）<br>Querystring是Nodejs内置对象之一，用来字符串化对象或解析字符串<br>querystring.parse(“name=henry&amp;age=30”) =&gt; { name: ‘henry’, age: ‘30’ }<br>Qs是一个querystring库，在qs中，支持了更多功能并优化了一些安全性；<br>Querystring不能解析复杂的对象，而qs可以做到</p>
+<p>npm:<br>Node Package Manager<br>Npm/svn是Nodejs官方提供的一个专门用于管理第三方模块的工具，这个工具随着Nodejs一起被安装，使用npm/svn可以安装、卸载、发布模块</p>
+<h2 id="JS创建对象的三种方式："><a href="#JS创建对象的三种方式：" class="headerlink" title="JS创建对象的三种方式："></a>JS创建对象的三种方式：</h2><p>（1）使用内置对象：<br>JavaScript可用的内置对象可分为两种：<br>1，JavaScript语言原生对象（语言级对象），如String、Object、Function等；<br>2，JavaScript运行期的宿主对象（环境宿主级对象），如window、document、body等。<br>Var obj = new String()<br>Var obj = new Function();<br>Var obj = new Object();<br>Obj.name = “lisi”;<br>Obj.age = 18;</p>
+<p>（2）使用JSON语句<br>Var a = {“name”: “lisi”, “age”: “18”};</p>
+<p>（3）使用构造函数实例化<br>Function Fn(){<br>This.name = ‘lisi’;<br>This.say = function(){};<br>};</p>
+<h1 id="JS的数据类型：基本类型-引用类型"><a href="#JS的数据类型：基本类型-引用类型" class="headerlink" title="JS的数据类型：基本类型+引用类型"></a>JS的数据类型：基本类型+引用类型</h1><h2 id="基本类型（5）-引用类型"><a href="#基本类型（5）-引用类型" class="headerlink" title="基本类型（5） 引用类型"></a>基本类型（5） 引用类型</h2><p>Null undefined boolean string number  js中除了基本类型就是引用类型了，也可以说就是对象了<br>Number String Boolean Function Object Math Date  Array Error<br>基本类型的值不可变 引用类型的值可变<br>基本类型的数据不可以添加属性和方法 引用类型可以拥有属性和方法，且可以动态改变<br>基本类型比较的是值比较 引用类型的比较是地址的比较<br>基本类型的变量存放在栈中  引用类型的值同时保存在堆和栈中<br>变量赋值，两个变量参加运算互不影响 变量赋值，对象引用，互相影响<br>JS的数据类型：基本类型+引用类型</p>
+<p>事件捕获/冒泡/委托<br>垂直居中<br>数据劫持：ES5中的object.defineProperty()</p>
+<h2 id="组件化开发-amp-模块化开发："><a href="#组件化开发-amp-模块化开发：" class="headerlink" title="组件化开发&amp;模块化开发："></a>组件化开发&amp;模块化开发：</h2><p>模块化中的模块一般指的是JavaScript中的模块，比如用来格式化时间的模块<br>一个模块就是实现特定功能的文件，有了模块我们就可以方便的使用别人的代码，想要什么功能就加载什么模块。<br>组件则包含了template、script和style，而它的script可以由不同功能的模板组成；比如一个显示时间的组件会调用上面那个格式化时间的模块。<br>模块化诉求的是解耦，组件化诉求的是好用</p>
+<h2 id="高内聚，低耦合："><a href="#高内聚，低耦合：" class="headerlink" title="高内聚，低耦合："></a>高内聚，低耦合：</h2><p>含义：把内在关联密切的功能/实现放在一个模块中，最小化暴露給外部的细节和依赖<br>模块之间低耦合，模块内部高内聚<br>1.高内聚—-一个系统有多个模块组成，在划分模块时，要把功能关系紧密的放在一个模块中<br>2.低耦合—-功能关系远的放到其他模块中，模块之间的联系越少越好，接口越简单越好<br>如果划分的模块之间的接口很复杂，说明功能划分的不是很合理，模块之间的耦合度太高，也说明了模块内的内聚也不高<br>3.解耦：<br>解耦就是让各个模块尽可能独立，这样的好处是尽可能的让各个模块的维护人员更专注模块本身的功能和完善，至于模块怎么划分，可以根据功能也可以根据业务需求。<br>降低耦合度最基本的我们应该少用全局变量。</p>
+<h2 id="为什么会有前端框架"><a href="#为什么会有前端框架" class="headerlink" title="为什么会有前端框架"></a>为什么会有前端框架</h2><p>在实际开发中，不是每个项目都需要用到框架的，如果项目较小，本身前端方面要求不是很高，那其实确实不是很需要框架，但是随着需求的变化，功能的增加，要满足越来越多的需求，<br>框架就有非常重要的作用了。<br>框架的使用可以节省开发时间，提高代码重用性，让开发变得更简单。<br>框架不同，适合场景也有所不同，得了解其适用场景才能充分发挥框架的作用，而不至于用了一个很复杂的框架，实际上只需要其中的很小一部分功能。<br>至于如何用，满足工作需要，那就好好了解官方文档，熟练使用其中的接口即可。如果想要学到更多，那就深入理解，看看你感兴趣的框架功能的实现，充分了解之后，可以根据实际项目，<br>定制自己的框架，或者修改已有的框架，让其更适合你的项目。</p>
+<h2 id="框架和库："><a href="#框架和库：" class="headerlink" title="框架和库："></a>框架和库：</h2><ol>
+<li>库：库是更多是一个封装好的特定的集合，提供给开发者使用，而且是特定于某一方面的集合（方法和函数），库没有控制权，控制权在使用者手中，在库中查询需要的功能在自己的应用<br>中使用，我们可以从封装的角度理解库；jQuery</li>
+<li>框架：框架顾名思义就是一套架构，会基于自身的特点向用户提供一套相当于叫完整的解决方案，而且控制权的在框架本身，使用者要找框架<br>所规定的某种规范进行开发。Bootstrap、Vue、Angular</li>
+</ol>
+<p>##库、插件、组件、控件、扩展</p>
+<ol>
+<li>组件本质：封装。一定程度上可以约等于模块化，调用者只需关注输入和输出，总思想就是分而治之、重复利用。低耦合；<br>组件解决资源整合问题、增强功能促进开发效率。提高可维护性，便于协同开发，每个模块都可以分拆为一个组件，例如异步请求组件，路由组件，各个视图组件。</li>
+<li>库：为解决某种特定需求的程序功能集合；即library，如jquery，常用于方便dom操作、解决浏览器兼容等问题。</li>
+<li>插件：参与程序内部运行环节的一段或多段代码集合；即Plugin，遵循一定规范写出来方便程序展示效果，拥有特定功能且方便调用。如轮播图和瀑布流插件，</li>
+<li>扩展：使用程序API扩展程序适用面的一段或多段代码集合；即Extension，</li>
+<li>组件：可重复使用并且可以和其他对象进行交互的对象；即Component，能复用的js代码其实跟插件差不多，区别可能就是插件专注于特定功能而组件更专注于复用吧。</li>
+<li>控件：提供或实现用户界面功能的组件，控件即组件，反之不一定。即Control，</li>
+</ol>
+<p>组件(Component)是是一个含义很大的概念，一般是指软件系统的一部分，承担了特定的职责，可以独立于整个系统进行开发和测试，一个良好设计的组件应该可以在不同的软件系统中被使用<br>(可复用)。例如V8引擎是Chrome浏览器的一部分，负责运行JavaScript代码，这里V8引擎就可以视为一个组件。V8引擎同时也是Node.js的javascript解释器，这体现了组件的可复用性。<br>库(Library)是一系列预先定义好的数据结构和函数(对于面向对象语言来说，是类)的集合，程序员通过使用这些数据结构和函数实现功能。例如Moment.js是一个javascript库，提供了处理时<br>间的一些函数。<br>框架(Framework)也是一系列预先定义好的数据结构和函数，一般用于作为一个软件的骨架，但程序真正的功能还需要由开发者实现。框架和库的最大区别在于“控制反转”，当你使用一个库，<br>你会调用库中的代码，而当你使用一个框架，框架会调用你的代码。框架和库是一个有交叉的概念，很多框架都是以库的形式发布的，例如Java的Spring MVC框架，其发布的jar包本身就是一<br>个库。而一个库如果也能通过依赖反转的方式进行扩展，那也可以视为一个框架，例如Python的markdonw解析库Python Markdown，可以添加自定义的解析扩展，那么可以被视为一个markdonw<br>解析框架。</p>
+<h2 id="Angular-js的优缺点："><a href="#Angular-js的优缺点：" class="headerlink" title="Angular.js的优缺点："></a>Angular.js的优缺点：</h2><p>优点：</p>
+<ol>
+<li>模板功能强大丰富，并且是声明式的，自带了丰富的Angular指令；</li>
+<li>是一个比较完善的前端MV*框架，包含模板，数据双向绑定，路由，模块化，服务，过滤器，依赖注入等所有功能；</li>
+<li>自定义Directive，比jQuery插件还灵活，但是需要深入了解Directive的一些特性，简单的封装容易，复杂一点官方没有提供详细的介绍文档，我们可以通过阅读源代码来找到某些我们需要的东西，如：在directive使用 $parse；</li>
+<li>ng模块化比较大胆的引入了Java的一些东西（依赖注入），能够很容易的写出可复用的代码，对于敏捷开发的团队来说非常有帮助，我们的项目从上线到目前，UI变化很大，在摸索中迭代产品，但是js的代码基本上很少改动。</li>
+<li>补充：Angular支持单元测试和e2e-testing。</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>验证功能错误信息显示比较薄弱，需要写很多模板标签，没有jQuery Validate方便，所以我们自己封装了验证的错误信息提示，详细参考 why520crazy/w5c-validator-angular · GitHub ；</li>
+<li>ngView只能有一个，不能嵌套多个视图，虽然有 angular-ui/ui-router · GitHub 解决，但是貌似ui-router 对于URL的控制不是很灵活，必须是嵌套式的（也许我没有深入了解或者新版本有改进）；</li>
+<li>对于特别复杂的应用场景，貌似性能有点问题，特别是在Windows下使用chrome浏览器，不知道是内存泄漏了还是什么其他问题，没有找到好的解决方案，奇怪的是在IE10下反而很快，对此还在观察中；</li>
+<li>这次从1.0.X升级到1.2.X，貌似有比较大的调整，没有完美兼容低版本，升级之后可能会导致一个兼容性的BUG，具体详细信息参考官方文档 AngularJS ，对应的中文版本：Angular 1.0到1.2 迁移指南</li>
+<li>ng提倡在控制器里面不要有操作DOM的代码，对于一些jQuery 插件的使用，如果想不破坏代码的整洁性，需要写一些directive去封装插件，但是现在有很多插件的版本已经支持Angular了，如：jQuery File Upload Demo</li>
+<li>Angular 太笨重了，没有让用户选择一个轻量级的版本，当然1.2.X后，Angular也在做一些更改，比如把route，animate等模块独立出去，让用户自己去选择。</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Web随心记5" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/10/Web随心记5/" class="article-date">
+  	<time datetime="2017-09-10T05:55:04.290Z" itemprop="datePublished">2017-09-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/10/Web随心记5/">
+        博文公园(Web随心记5)
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
+<li>ajax的兼容性写法</li>
+</ol>
+<p>性能优化<br>1.减少http请求<br>    (1)减少DNS请求所耗费的时间<br>    (2)减少服务器压力<br>    (3)减少http请求头<br>2.减少dom节点：加速页面渲染<br>3.用link标签加载css资源而不用@import方式导入样式<br>4.样式放在页头，js放在页尾<br>5.尽量少用全局变量</p>
+<ol>
+<li>Nodejs可以监听80端口吗？</li>
+</ol>
+<p>不可以，Window下Nodejs监听80端口提示端口会被占用报错，解决方案如下：<br>1、cmd—netstat -ano查看是什么程序占用了80端口；<br>2、控制面板–管理工具–服务–停止 SQL Server ReportingServices这个服务；<br>然后 nodejs就能直接通过域名绑定 80端口了。</p>
+<ol>
+<li>事件委托：</li>
+</ol>
+<p>利用事件冒泡的原理，让本来该自己触发的事件，让他的父元素代替执行；<br>利用时间委托技术能让我们避免对每个特定的节点添加事件，事件只需要添加到他们的父元素上。事件监听器会分析从子元素冒泡上来的事件，找到是哪个子元素的事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 找到父元素，添加监听器</div><div class="line">document.getElementById(&quot;parent-list&quot;).addEventListener(&quot;click&quot;,function(e)&#123;</div><div class="line">  //e.target是被点击的元素！</div><div class="line">  //如果被点击的是li元素</div><div class="line">  if(e.target &amp;&amp; e.target.nodeName == &quot;LI&quot;)&#123;</div><div class="line">    // 找到目标，输出ID</div><div class="line">    console.log(&quot;List item&quot;, e.target.id.replace(&quot;post-&quot;),&quot;was clicked!&quot;)</div><div class="line">  &#125;</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+<ol>
+<li>Javascript的事件流模型都有什么？</li>
+</ol>
+<p>‘DOM事件流’三个阶段：事件捕获、目标阶段、事件冒泡<br>‘事件冒泡’：事件开始由最具体的元素接收，然后逐级向上传播<br>‘事件捕获’：事件由最不具体的节点先接收，然后逐级向下传播，直达最具体的</p>
+<h3 id="5-JS的IE和Firefox（MF）兼容性汇总？http-blog-sina-com-cn-s-blog-5656b0020100dbu2-html"><a href="#5-JS的IE和Firefox（MF）兼容性汇总？http-blog-sina-com-cn-s-blog-5656b0020100dbu2-html" class="headerlink" title="5.JS的IE和Firefox（MF）兼容性汇总？http://blog.sina.com.cn/s/blog_5656b0020100dbu2.html"></a>5.JS的IE和Firefox（MF）兼容性汇总？<a href="http://blog.sina.com.cn/s/blog_5656b0020100dbu2.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_5656b0020100dbu2.html</a></h3><ol>
+<li>document.form.item 问题</li>
+</ol>
+<p>(1)现有问题：<br>        现有代码中存在许多 document.formName.item(“itemName”) 这样的语句，不能在 MF 下运行<br>(2)解决方法：<br>        改用 document.formName.elements[“elementName”]</p>
+<ol>
+<li>集合类对象问题</li>
+</ol>
+<p>(1)现有问题：<br>        现有代码中许多集合类对象取用时使用 ()，IE 能接受，MF 不能。<br>(2)解决方法：<br>        改用 [] 作为下标运算。如：document.forms(“formName”) 改为 document.forms[“formName”]。<br>        又如：document.getElementsByName(“inputName”)(1) 改为 document.getElementsByName(“inputName”)[1]</p>
+<ol>
+<li>HTML 对象的 id 作为对象名的问题</li>
+</ol>
+<p>(1)现有问题<br>        在 IE 中，HTML 对象的 ID 可以作为 document 的下属对象变量名直接使用。在 MF 中不能。<br>(2)解决方法<br>        用 getElementById(“idName”) 代替 idName 作为对象变量使用。</p>
+<ol>
+<li>用idName字符串取得对象的问题</li>
+</ol>
+<p>(1)现有问题<br>        在IE中，利用 (idName) 可以取得 id 为 idName 的 HTML 对象，在MF 中不能。<br>(2)解决方法<br>        用 getElementById(idName) 代替 (idName)。</p>
+<ol>
+<li>event.x 与 event.y 问题</li>
+</ol>
+<p>(1)现有问题<br>        在IE 中，event 对象有 x, y 属性，MF中没有。<br>(2)解决方法<br>        在MF中，与event.x 等效的是 event.pageX。但event.pageX IE中没有。<br>        故采用 event.clientX 代替 event.x。在IE 中也有这个变量。<br>        event.clientX 与 event.pageX 有微妙的差别（当整个页面有滚动条的时候），不过大多数时候是等效的。<br>如果要完全一样，可以稍麻烦些：<br>        mX = event.x ? event.x : event.pageX;<br>        然后用 mX 代替 event.x</p>
+<ol>
+<li>const 问题  </li>
+</ol>
+<p>(1)现有问题:<br>     在 IE 中不能使用 const 关键字。如 const constVar = 32; 在IE中这是语法错误。<br>(2)解决方法:<br>     不使用 const ，以 var 代替。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Web随心记4" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/10/Web随心记4/" class="article-date">
+  	<time datetime="2017-09-10T05:53:28.899Z" itemprop="datePublished">2017-09-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/10/Web随心记4/">
+        博文公园(Web随心记4)
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="8-Angular项目开发，MVC、MVVM开发模式，spa程序开发"><a href="#8-Angular项目开发，MVC、MVVM开发模式，spa程序开发" class="headerlink" title="8. Angular项目开发，MVC、MVVM开发模式，spa程序开发"></a>8. Angular项目开发，MVC、MVVM开发模式，spa程序开发</h3><ol>
+<li>angular是什么</li>
+</ol>
+<p>前端JS框架，最为核心的是：MVC、模块化、自动化双向数据绑定、语义化标签、依赖注入等等。<br>AngularJS是一款由Google公司开发维护的前端MVC框架，其克服了HTML在构建应用上的诸多不足，从而降低了开发成本提升了开发效率。<br>AngularJS 是一个 JavaScript 框架。它是一个以 JavaScript 编写的库。<br>AngularJS 是以一个 JavaScript 文件形式发布的，可通过 script 标签添加到网页中：</p>
+<p>Angular :<br>Angualr是一个JavaScript框架，以JavaScript文件发布的，可以通过script标签添加到网页中<br>Angular是一款由Google公司开发维护的的前端MVC框架<br>Angular和jQuery是有一定区别的：jQuery更准确的说是一个类库（类库是指一系列函数的聚合），以DOM作为驱动<br>而angular则是一个框架（诸多类库的集合），以数据和逻辑为驱动<br>Angular有诸多的特性，最为核心的有：模块化、数据双向绑定，语义化标签，依赖注入等</p>
+<ol>
+<li>MVC :</li>
+</ol>
+<p>是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计规范，用一种业务逻辑、数据、界面显示分离的方法组织代码<br>MVC模式的意思是，软件可以分成三个部分。<br>视图（View）：用户界面。<br>控制器（Controller）：业务逻辑<br>模型（Model）：数据保存</p>
+<p>1.View 传送指令到 Controller<br>2.Controller 完成业务逻辑后，要求 Model 改变状态<br>3.Model 将新的数据发送到 View，用户得到反馈<br>所有通信都是单向的。<br>所谓的MVC就是 我们把网页代码按照视图 ，数据模型 和 控制器的方式进行分离；视图控制网页格式，数据模型控制数据，控制器就是联系数据和模板之间如何工作的逻辑代码。</p>
+<p>MVC是一种开发模式 module view controller<br>模型（module）用来读取/设置/处理数据，一般指操作数据库<br>视图（view）一般用来展示数据，通过HTML标签展示数据<br>控制器（controller）一般用来连接模型和视图的桥梁</p>
+<ol>
+<li>MVVM :</li>
+</ol>
+<p>它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel<br>MVVM在概念上是真正将页面与数据逻辑分离的模式，它把数据绑定工作放到一个JS里去实现，而这个JS文件的主要功能是完成数据的绑定，即把model绑定到UI的元素上。</p>
+<p>MVVM是MVC的变种和进阶，<br>M—-&gt; model 模型层（一般用于数据存储，存储一些业务逻辑），也就是我们说的数据模型。<br>V—–&gt; view 视图层（界面），用来展示数据。<br>VM–&gt; ViewModel（视图模型） 也就是$scope。</p>
+<p>在实际应用中，更多的是进行页面交互，而最后一次性向服务器提交处理（弱化了MVC中控制器的功能），增强了视图与模型的使用，因此将此称之为MVVM.</p>
+<ol>
+<li>模块化：</li>
+</ol>
+<p>使用angular构建应用APP时是以模块（module）的方式组织的，将整个应用划分成若干个模块，每个模块各司其职，最终组成一个整体</p>
+<ol>
+<li>指令（属性）：</li>
+</ol>
+<p>所谓指令就是angular自定义属性或标签<br>内置指令：<br>ng-app=“APP”—指定应用根元素<br>Ng-controller—指定控制器<br>Ng-show，ng-hide，ng-if，ng-href， ng-class， ng-src</p>
+<ol>
+<li>自定义指令（directive）：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">Angular允许根据实际业务需要自定义指令，通过angular全局对象下的directive方法</div><div class="line">指令系统一共可以定义4种类型的指令</div><div class="line">Restrict： “E”----元素element</div><div class="line">Restrict： “A”----属性attribute</div><div class="line">Restrict： “C”----类名class</div><div class="line">Restrict： “M”----注释comment</div><div class="line"></div><div class="line">Var APP = angular.module(‘app’, []);</div><div class="line">App.directive(‘Directives’,function()&#123;</div><div class="line">Return &#123;</div><div class="line">   Restrict: “E”,</div><div class="line">   Tempalte: ‘&lt;button class=”btn, btn-lg”&gt;&lt;/button&gt;’,</div><div class="line">   Replace: true</div><div class="line">&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ol>
+<li>数据绑定：</li>
+</ol>
+<p>Angular是以数据为驱动的MVC框架，所有模型（module）里的数据都是经过控制器（controller）展示到视图（view）上的<br>所谓的数据绑定就是将模型（module）中的数据与相应的视图（view）进行关联<br>分为单向数据绑定和双向数据绑定：<br>单向数据绑定：将模型（module）中的数据通过模板引擎渲染到页面视图（view）上<br>或将视图（view）中绑定ng-model的数据传递给模型（module）中<br>双向数据绑定：将视图（view）中绑定ng-model的数据传递给模型（module），然后再把模型（module）中的数据渲染到页面视图（view）上</p>
+<ol>
+<li>路由：</li>
+</ol>
+<p>一个应用由多个视图组成，根据不同的业务逻辑展示给用户不同的视图，路由就是实现这个功能的关键<br>SPA（single page application）指的是通过单一页面展示所有的功能，通过http请求动态获取数据进行实时渲染；<br>SPA原理：在开发单页面应用时，所有的功能都在同一个页面完成，所以无需切换URL地址（不允许发生跳转），但web应用中又经常通过a标签来更新页面（视图），<br>当点击链接时要阻止其向服务器发起请求，通过锚点（锚链接）可以实现这一点<br>通过hashchange事件可以实时监测到地址的变化（location.hash）<br>Angular对这一现实原理进行了封装，将锚点的变化封装成路由（route）<br>Angular-route</p>
+<p>Ng-repeat 迭代数组的时候，如果数组中有相同的值，会报错，说值重复了。<br>解决方法：ng-repeat=”item in items track by $index”</p>
+<p>Ng-click中写的表达式，不能使用JS原生对象上的方法，因为这些不是存在于与页面对用的Controller的$scope中。比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;&#123;&#123;parseInt(10.01)&#125;&#125;&lt;/p&gt;这样写是不可以的</div><div class="line">应该写成：</div><div class="line">$scope.parseInt = function(x)&#123;rentrun parseInt(x)&#125;;</div><div class="line">或定义一个过滤器：</div><div class="line">App.filter(“parseIntFilter”, function() &#123;return function(x)&#123;reurn parseInt(x)&#125;&#125;);</div><div class="line">&lt;p&gt;&#123;10.01 | parseIntFilter&#125;&#125;&lt;/p&gt;</div></pre></td></tr></table></figure>
+<ol>
+<li>依赖注入：</li>
+</ol>
+<p>所谓依赖注册是指运行时自动查找依赖关系，然后将查找到的依赖传递给使用者的一种机制。<br>通俗的讲就是通过注入的方式解决依赖；<br>（1）行内注入：用数组的方式明确声明依赖，数组的最后一个元素是依赖注入的目标函数<br>（2）推断式注入：没有明确声明依赖，angular会将函数参数名当成依赖依赖的名称。这种方式会出现一个问题，当代码被压缩后函数的参数也会被压缩，会造成依赖无法找到。</p>
+<h3 id="7-使用-SVN-Git-代码版本管理器"><a href="#7-使用-SVN-Git-代码版本管理器" class="headerlink" title="7. 使用 SVN/Git 代码版本管理器"></a>7. 使用 SVN/Git 代码版本管理器</h3><p>最核心的区别Git是分布式的，而Svn不是分布的。</p>
+<p>git init 初始化一个仓库<br>git commit -m ‘注释’  提交<br>git push   推送到远程<br>git pull<br>git checkout -b 分支名   创建并进入分支<br>git checkout 分支名  切换分支</p>
+<h3 id="8-项目构建工具Webpack、Gulp"><a href="#8-项目构建工具Webpack、Gulp" class="headerlink" title="8. 项目构建工具Webpack、Gulp"></a>8. 项目构建工具Webpack、Gulp</h3><p>多个开发者共同开发一个项目，每位开发者负责不同的模块，这就会造成一个完整的项目实际上是由许多的“代码版段”组成的；<br>使用less、sass等一些预处理程序，降低CSS的维护成本，最终需要将这些预处理程序进行解析；<br>合并css、javascript，压缩html、css、javascript、images可以加速网页打开速度，提升性能；<br>这一系列的任务完全靠手动完成几乎是不可能的，借助构建工具可以轻松实现。<br>所谓构建工具是指通过简单配置就可以帮我们实现合并、压缩、校验、预处理等一系列任务的软件工具。<br>常见的构建工具包括：Grunt、Gulp、F.I.S（百度出品）、webpack</p>
+<p>Gulp是基于Nodejs开发的一个构建工具，借助gulp可以实现不同的构建任务，以其简洁的配置和卓越的性能称为目前最主流的构建工具（npm install -g gulp）</p>
+<p>gulp是什么<br>gulp是前端开发过程中对代码进行构建的工具，是自动化项目的构建利器<br>gulp可以通过各种插件完成代码构建任务，如：文件合并，文本替换，图片-css-js压缩等<br>gulp.task() 定义一个任务<br>gulp.pipe() 将需要构建的资源输送给插件，类比于管道<br>gulp。dest() 将构建完成之后的资源存放到指定路径<br>gulp.watch() 监听</p>
+<p>常用插件<br>gulp-less 编译LESS文件<br>gulp-autoprefixer 添加CSS私有前缀<br>gulp-cssmin 压缩CSS<br>gulp-rename重命名<br>gulp-imagemin 图片压缩<br>gulp-uglify 压缩Javascript（会自动删除没有用的变量）<br>gulp-concat 合并</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//less任务名称 回调方法里定义任务</div><div class="line">gulp.task(&apos;less&apos;,function()&#123;</div><div class="line">  // 需要编译的less</div><div class="line">  gulp.src(&apos;./piblic/less/**/.js&apos;)</div><div class="line">  // 将src获取的资源传递给less插件</div><div class="line">  .pipe(less())</div><div class="line">  // 将 less插件编译好的文件存储</div><div class="line">  .pipe(gulp.dest(&apos;./public/css&apos;));</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-Web随心记3" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>博文公园(Web随心记5) | 这世界很酷K</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="其他 ajax的兼容性写法  性能优化1.减少http请求    (1)减少DNS请求所耗费的时间    (2)减少服务器压力    (3)减少http请求头2.减少dom节点：加速页面渲染3.用link标签加载css资源而不用@import方式导入样式4.样式放在页头，js放在页尾5.尽量少用全局变量  Nodejs可以监听80端口吗？  不可以，Window下Nodejs监听80端口提示端口会">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博文公园(Web随心记5)">
+<meta property="og:url" content="http://yoursite.com/2017/09/10/Web随心记5/index.html">
+<meta property="og:site_name" content="这世界很酷K">
+<meta property="og:description" content="其他 ajax的兼容性写法  性能优化1.减少http请求    (1)减少DNS请求所耗费的时间    (2)减少服务器压力    (3)减少http请求头2.减少dom节点：加速页面渲染3.用link标签加载css资源而不用@import方式导入样式4.样式放在页头，js放在页尾5.尽量少用全局变量  Nodejs可以监听80端口吗？  不可以，Window下Nodejs监听80端口提示端口会">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-10T06:39:34.164Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="博文公园(Web随心记5)">
+<meta name="twitter:description" content="其他 ajax的兼容性写法  性能优化1.减少http请求    (1)减少DNS请求所耗费的时间    (2)减少服务器压力    (3)减少http请求头2.减少dom节点：加速页面渲染3.用link标签加载css资源而不用@import方式导入样式4.样式放在页头，js放在页尾5.尽量少用全局变量  Nodejs可以监听80端口吗？  不可以，Window下Nodejs监听80端口提示端口会">
+  
+    <link rel="alternative" href="/atom.xml" title="这世界很酷K" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head-1.gif" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">酷K</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我奔涌的暖流，寻找你的海洋</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/cool-k" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/esc-88/activities" title="zhihu">zhihu</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">true</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">酷K</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head-1.gif" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">酷K</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我奔涌的暖流，寻找你的海洋</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/cool-k" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/esc-88/activities" title="zhihu">zhihu</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Web随心记5" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/10/Web随心记5/" class="article-date">
+  	<time datetime="2017-09-10T05:55:04.290Z" itemprop="datePublished">2017-09-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      博文公园(Web随心记5)
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
+<li>ajax的兼容性写法</li>
+</ol>
+<p>性能优化<br>1.减少http请求<br>    (1)减少DNS请求所耗费的时间<br>    (2)减少服务器压力<br>    (3)减少http请求头<br>2.减少dom节点：加速页面渲染<br>3.用link标签加载css资源而不用@import方式导入样式<br>4.样式放在页头，js放在页尾<br>5.尽量少用全局变量</p>
+<ol>
+<li>Nodejs可以监听80端口吗？</li>
+</ol>
+<p>不可以，Window下Nodejs监听80端口提示端口会被占用报错，解决方案如下：<br>1、cmd—netstat -ano查看是什么程序占用了80端口；<br>2、控制面板–管理工具–服务–停止 SQL Server ReportingServices这个服务；<br>然后 nodejs就能直接通过域名绑定 80端口了。</p>
+<ol>
+<li>事件委托：</li>
+</ol>
+<p>利用事件冒泡的原理，让本来该自己触发的事件，让他的父元素代替执行；<br>利用时间委托技术能让我们避免对每个特定的节点添加事件，事件只需要添加到他们的父元素上。事件监听器会分析从子元素冒泡上来的事件，找到是哪个子元素的事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 找到父元素，添加监听器</div><div class="line">document.getElementById(&quot;parent-list&quot;).addEventListener(&quot;click&quot;,function(e)&#123;</div><div class="line">  //e.target是被点击的元素！</div><div class="line">  //如果被点击的是li元素</div><div class="line">  if(e.target &amp;&amp; e.target.nodeName == &quot;LI&quot;)&#123;</div><div class="line">    // 找到目标，输出ID</div><div class="line">    console.log(&quot;List item&quot;, e.target.id.replace(&quot;post-&quot;),&quot;was clicked!&quot;)</div><div class="line">  &#125;</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+<ol>
+<li>Javascript的事件流模型都有什么？</li>
+</ol>
+<p>‘DOM事件流’三个阶段：事件捕获、目标阶段、事件冒泡<br>‘事件冒泡’：事件开始由最具体的元素接收，然后逐级向上传播<br>‘事件捕获’：事件由最不具体的节点先接收，然后逐级向下传播，直达最具体的</p>
+<h3 id="5-JS的IE和Firefox（MF）兼容性汇总？http-blog-sina-com-cn-s-blog-5656b0020100dbu2-html"><a href="#5-JS的IE和Firefox（MF）兼容性汇总？http-blog-sina-com-cn-s-blog-5656b0020100dbu2-html" class="headerlink" title="5.JS的IE和Firefox（MF）兼容性汇总？http://blog.sina.com.cn/s/blog_5656b0020100dbu2.html"></a>5.JS的IE和Firefox（MF）兼容性汇总？<a href="http://blog.sina.com.cn/s/blog_5656b0020100dbu2.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_5656b0020100dbu2.html</a></h3><ol>
+<li>document.form.item 问题</li>
+</ol>
+<p>(1)现有问题：<br>        现有代码中存在许多 document.formName.item(“itemName”) 这样的语句，不能在 MF 下运行<br>(2)解决方法：<br>        改用 document.formName.elements[“elementName”]</p>
+<ol>
+<li>集合类对象问题</li>
+</ol>
+<p>(1)现有问题：<br>        现有代码中许多集合类对象取用时使用 ()，IE 能接受，MF 不能。<br>(2)解决方法：<br>        改用 [] 作为下标运算。如：document.forms(“formName”) 改为 document.forms[“formName”]。<br>        又如：document.getElementsByName(“inputName”)(1) 改为 document.getElementsByName(“inputName”)[1]</p>
+<ol>
+<li>HTML 对象的 id 作为对象名的问题</li>
+</ol>
+<p>(1)现有问题<br>        在 IE 中，HTML 对象的 ID 可以作为 document 的下属对象变量名直接使用。在 MF 中不能。<br>(2)解决方法<br>        用 getElementById(“idName”) 代替 idName 作为对象变量使用。</p>
+<ol>
+<li>用idName字符串取得对象的问题</li>
+</ol>
+<p>(1)现有问题<br>        在IE中，利用 (idName) 可以取得 id 为 idName 的 HTML 对象，在MF 中不能。<br>(2)解决方法<br>        用 getElementById(idName) 代替 (idName)。</p>
+<ol>
+<li>event.x 与 event.y 问题</li>
+</ol>
+<p>(1)现有问题<br>        在IE 中，event 对象有 x, y 属性，MF中没有。<br>(2)解决方法<br>        在MF中，与event.x 等效的是 event.pageX。但event.pageX IE中没有。<br>        故采用 event.clientX 代替 event.x。在IE 中也有这个变量。<br>        event.clientX 与 event.pageX 有微妙的差别（当整个页面有滚动条的时候），不过大多数时候是等效的。<br>如果要完全一样，可以稍麻烦些：<br>        mX = event.x ? event.x : event.pageX;<br>        然后用 mX 代替 event.x</p>
+<ol>
+<li>const 问题  </li>
+</ol>
+<p>(1)现有问题:<br>     在 IE 中不能使用 const 关键字。如 const constVar = 32; 在IE中这是语法错误。<br>(2)解决方法:<br>     不使用 const ，以 var 代替。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/10/Web随心记6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          博文公园(Web随心记6)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/10/Web随心记4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">博文公园(Web随心记4)</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="Web随心记5" data-title="博文公园(Web随心记5)" data-url="http://yoursite.com/2017/09/10/Web随心记5/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head-1.gif" data-content="博文公园(Web随心记5)">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2017 酷K
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

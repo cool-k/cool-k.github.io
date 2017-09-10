@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>博文公园(Web随心记4) | 这世界很酷K</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="8. Angular项目开发，MVC、MVVM开发模式，spa程序开发 angular是什么  前端JS框架，最为核心的是：MVC、模块化、自动化双向数据绑定、语义化标签、依赖注入等等。AngularJS是一款由Google公司开发维护的前端MVC框架，其克服了HTML在构建应用上的诸多不足，从而降低了开发成本提升了开发效率。AngularJS 是一个 JavaScript 框架。它是一个以 Ja">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博文公园(Web随心记4)">
+<meta property="og:url" content="http://yoursite.com/2017/09/10/Web随心记4/index.html">
+<meta property="og:site_name" content="这世界很酷K">
+<meta property="og:description" content="8. Angular项目开发，MVC、MVVM开发模式，spa程序开发 angular是什么  前端JS框架，最为核心的是：MVC、模块化、自动化双向数据绑定、语义化标签、依赖注入等等。AngularJS是一款由Google公司开发维护的前端MVC框架，其克服了HTML在构建应用上的诸多不足，从而降低了开发成本提升了开发效率。AngularJS 是一个 JavaScript 框架。它是一个以 Ja">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-10T06:38:39.850Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="博文公园(Web随心记4)">
+<meta name="twitter:description" content="8. Angular项目开发，MVC、MVVM开发模式，spa程序开发 angular是什么  前端JS框架，最为核心的是：MVC、模块化、自动化双向数据绑定、语义化标签、依赖注入等等。AngularJS是一款由Google公司开发维护的前端MVC框架，其克服了HTML在构建应用上的诸多不足，从而降低了开发成本提升了开发效率。AngularJS 是一个 JavaScript 框架。它是一个以 Ja">
+  
+    <link rel="alternative" href="/atom.xml" title="这世界很酷K" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head-1.gif" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">酷K</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我奔涌的暖流，寻找你的海洋</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/cool-k" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/esc-88/activities" title="zhihu">zhihu</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">true</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">酷K</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head-1.gif" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">酷K</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我奔涌的暖流，寻找你的海洋</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/cool-k" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/esc-88/activities" title="zhihu">zhihu</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Web随心记4" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/10/Web随心记4/" class="article-date">
+  	<time datetime="2017-09-10T05:53:28.899Z" itemprop="datePublished">2017-09-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      博文公园(Web随心记4)
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="8-Angular项目开发，MVC、MVVM开发模式，spa程序开发"><a href="#8-Angular项目开发，MVC、MVVM开发模式，spa程序开发" class="headerlink" title="8. Angular项目开发，MVC、MVVM开发模式，spa程序开发"></a>8. Angular项目开发，MVC、MVVM开发模式，spa程序开发</h3><ol>
+<li>angular是什么</li>
+</ol>
+<p>前端JS框架，最为核心的是：MVC、模块化、自动化双向数据绑定、语义化标签、依赖注入等等。<br>AngularJS是一款由Google公司开发维护的前端MVC框架，其克服了HTML在构建应用上的诸多不足，从而降低了开发成本提升了开发效率。<br>AngularJS 是一个 JavaScript 框架。它是一个以 JavaScript 编写的库。<br>AngularJS 是以一个 JavaScript 文件形式发布的，可通过 script 标签添加到网页中：</p>
+<p>Angular :<br>Angualr是一个JavaScript框架，以JavaScript文件发布的，可以通过script标签添加到网页中<br>Angular是一款由Google公司开发维护的的前端MVC框架<br>Angular和jQuery是有一定区别的：jQuery更准确的说是一个类库（类库是指一系列函数的聚合），以DOM作为驱动<br>而angular则是一个框架（诸多类库的集合），以数据和逻辑为驱动<br>Angular有诸多的特性，最为核心的有：模块化、数据双向绑定，语义化标签，依赖注入等</p>
+<ol>
+<li>MVC :</li>
+</ol>
+<p>是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计规范，用一种业务逻辑、数据、界面显示分离的方法组织代码<br>MVC模式的意思是，软件可以分成三个部分。<br>视图（View）：用户界面。<br>控制器（Controller）：业务逻辑<br>模型（Model）：数据保存</p>
+<p>1.View 传送指令到 Controller<br>2.Controller 完成业务逻辑后，要求 Model 改变状态<br>3.Model 将新的数据发送到 View，用户得到反馈<br>所有通信都是单向的。<br>所谓的MVC就是 我们把网页代码按照视图 ，数据模型 和 控制器的方式进行分离；视图控制网页格式，数据模型控制数据，控制器就是联系数据和模板之间如何工作的逻辑代码。</p>
+<p>MVC是一种开发模式 module view controller<br>模型（module）用来读取/设置/处理数据，一般指操作数据库<br>视图（view）一般用来展示数据，通过HTML标签展示数据<br>控制器（controller）一般用来连接模型和视图的桥梁</p>
+<ol>
+<li>MVVM :</li>
+</ol>
+<p>它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel<br>MVVM在概念上是真正将页面与数据逻辑分离的模式，它把数据绑定工作放到一个JS里去实现，而这个JS文件的主要功能是完成数据的绑定，即把model绑定到UI的元素上。</p>
+<p>MVVM是MVC的变种和进阶，<br>M—-&gt; model 模型层（一般用于数据存储，存储一些业务逻辑），也就是我们说的数据模型。<br>V—–&gt; view 视图层（界面），用来展示数据。<br>VM–&gt; ViewModel（视图模型） 也就是$scope。</p>
+<p>在实际应用中，更多的是进行页面交互，而最后一次性向服务器提交处理（弱化了MVC中控制器的功能），增强了视图与模型的使用，因此将此称之为MVVM.</p>
+<ol>
+<li>模块化：</li>
+</ol>
+<p>使用angular构建应用APP时是以模块（module）的方式组织的，将整个应用划分成若干个模块，每个模块各司其职，最终组成一个整体</p>
+<ol>
+<li>指令（属性）：</li>
+</ol>
+<p>所谓指令就是angular自定义属性或标签<br>内置指令：<br>ng-app=“APP”—指定应用根元素<br>Ng-controller—指定控制器<br>Ng-show，ng-hide，ng-if，ng-href， ng-class， ng-src</p>
+<ol>
+<li>自定义指令（directive）：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">Angular允许根据实际业务需要自定义指令，通过angular全局对象下的directive方法</div><div class="line">指令系统一共可以定义4种类型的指令</div><div class="line">Restrict： “E”----元素element</div><div class="line">Restrict： “A”----属性attribute</div><div class="line">Restrict： “C”----类名class</div><div class="line">Restrict： “M”----注释comment</div><div class="line"></div><div class="line">Var APP = angular.module(‘app’, []);</div><div class="line">App.directive(‘Directives’,function()&#123;</div><div class="line">Return &#123;</div><div class="line">   Restrict: “E”,</div><div class="line">   Tempalte: ‘&lt;button class=”btn, btn-lg”&gt;&lt;/button&gt;’,</div><div class="line">   Replace: true</div><div class="line">&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ol>
+<li>数据绑定：</li>
+</ol>
+<p>Angular是以数据为驱动的MVC框架，所有模型（module）里的数据都是经过控制器（controller）展示到视图（view）上的<br>所谓的数据绑定就是将模型（module）中的数据与相应的视图（view）进行关联<br>分为单向数据绑定和双向数据绑定：<br>单向数据绑定：将模型（module）中的数据通过模板引擎渲染到页面视图（view）上<br>或将视图（view）中绑定ng-model的数据传递给模型（module）中<br>双向数据绑定：将视图（view）中绑定ng-model的数据传递给模型（module），然后再把模型（module）中的数据渲染到页面视图（view）上</p>
+<ol>
+<li>路由：</li>
+</ol>
+<p>一个应用由多个视图组成，根据不同的业务逻辑展示给用户不同的视图，路由就是实现这个功能的关键<br>SPA（single page application）指的是通过单一页面展示所有的功能，通过http请求动态获取数据进行实时渲染；<br>SPA原理：在开发单页面应用时，所有的功能都在同一个页面完成，所以无需切换URL地址（不允许发生跳转），但web应用中又经常通过a标签来更新页面（视图），<br>当点击链接时要阻止其向服务器发起请求，通过锚点（锚链接）可以实现这一点<br>通过hashchange事件可以实时监测到地址的变化（location.hash）<br>Angular对这一现实原理进行了封装，将锚点的变化封装成路由（route）<br>Angular-route</p>
+<p>Ng-repeat 迭代数组的时候，如果数组中有相同的值，会报错，说值重复了。<br>解决方法：ng-repeat=”item in items track by $index”</p>
+<p>Ng-click中写的表达式，不能使用JS原生对象上的方法，因为这些不是存在于与页面对用的Controller的$scope中。比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;&#123;&#123;parseInt(10.01)&#125;&#125;&lt;/p&gt;这样写是不可以的</div><div class="line">应该写成：</div><div class="line">$scope.parseInt = function(x)&#123;rentrun parseInt(x)&#125;;</div><div class="line">或定义一个过滤器：</div><div class="line">App.filter(“parseIntFilter”, function() &#123;return function(x)&#123;reurn parseInt(x)&#125;&#125;);</div><div class="line">&lt;p&gt;&#123;10.01 | parseIntFilter&#125;&#125;&lt;/p&gt;</div></pre></td></tr></table></figure>
+<ol>
+<li>依赖注入：</li>
+</ol>
+<p>所谓依赖注册是指运行时自动查找依赖关系，然后将查找到的依赖传递给使用者的一种机制。<br>通俗的讲就是通过注入的方式解决依赖；<br>（1）行内注入：用数组的方式明确声明依赖，数组的最后一个元素是依赖注入的目标函数<br>（2）推断式注入：没有明确声明依赖，angular会将函数参数名当成依赖依赖的名称。这种方式会出现一个问题，当代码被压缩后函数的参数也会被压缩，会造成依赖无法找到。</p>
+<h3 id="7-使用-SVN-Git-代码版本管理器"><a href="#7-使用-SVN-Git-代码版本管理器" class="headerlink" title="7. 使用 SVN/Git 代码版本管理器"></a>7. 使用 SVN/Git 代码版本管理器</h3><p>最核心的区别Git是分布式的，而Svn不是分布的。</p>
+<p>git init 初始化一个仓库<br>git commit -m ‘注释’  提交<br>git push   推送到远程<br>git pull<br>git checkout -b 分支名   创建并进入分支<br>git checkout 分支名  切换分支</p>
+<h3 id="8-项目构建工具Webpack、Gulp"><a href="#8-项目构建工具Webpack、Gulp" class="headerlink" title="8. 项目构建工具Webpack、Gulp"></a>8. 项目构建工具Webpack、Gulp</h3><p>多个开发者共同开发一个项目，每位开发者负责不同的模块，这就会造成一个完整的项目实际上是由许多的“代码版段”组成的；<br>使用less、sass等一些预处理程序，降低CSS的维护成本，最终需要将这些预处理程序进行解析；<br>合并css、javascript，压缩html、css、javascript、images可以加速网页打开速度，提升性能；<br>这一系列的任务完全靠手动完成几乎是不可能的，借助构建工具可以轻松实现。<br>所谓构建工具是指通过简单配置就可以帮我们实现合并、压缩、校验、预处理等一系列任务的软件工具。<br>常见的构建工具包括：Grunt、Gulp、F.I.S（百度出品）、webpack</p>
+<p>Gulp是基于Nodejs开发的一个构建工具，借助gulp可以实现不同的构建任务，以其简洁的配置和卓越的性能称为目前最主流的构建工具（npm install -g gulp）</p>
+<p>gulp是什么<br>gulp是前端开发过程中对代码进行构建的工具，是自动化项目的构建利器<br>gulp可以通过各种插件完成代码构建任务，如：文件合并，文本替换，图片-css-js压缩等<br>gulp.task() 定义一个任务<br>gulp.pipe() 将需要构建的资源输送给插件，类比于管道<br>gulp。dest() 将构建完成之后的资源存放到指定路径<br>gulp.watch() 监听</p>
+<p>常用插件<br>gulp-less 编译LESS文件<br>gulp-autoprefixer 添加CSS私有前缀<br>gulp-cssmin 压缩CSS<br>gulp-rename重命名<br>gulp-imagemin 图片压缩<br>gulp-uglify 压缩Javascript（会自动删除没有用的变量）<br>gulp-concat 合并</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//less任务名称 回调方法里定义任务</div><div class="line">gulp.task(&apos;less&apos;,function()&#123;</div><div class="line">  // 需要编译的less</div><div class="line">  gulp.src(&apos;./piblic/less/**/.js&apos;)</div><div class="line">  // 将src获取的资源传递给less插件</div><div class="line">  .pipe(less())</div><div class="line">  // 将 less插件编译好的文件存储</div><div class="line">  .pipe(gulp.dest(&apos;./public/css&apos;));</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/10/Web随心记5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          博文公园(Web随心记5)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/10/Web随心记3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">博文公园(Web随心记3)</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="Web随心记4" data-title="博文公园(Web随心记4)" data-url="http://yoursite.com/2017/09/10/Web随心记4/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head-1.gif" data-content="博文公园(Web随心记4)">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2017 酷K
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
