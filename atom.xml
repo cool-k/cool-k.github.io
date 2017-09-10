@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>这世界很酷K</title>
+  
+  <subtitle>我奔涌的暖流，寻找你的海洋</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-09-10T04:24:39.981Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>酷K</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代码计划</title>
+    <link href="http://yoursite.com/2017/09/10/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF(%E8%AE%B0%E5%BD%95)/"/>
+    <id>http://yoursite.com/2017/09/10/知识积累(记录)/</id>
+    <published>2017-09-10T05:40:31.126Z</published>
+    <updated>2017-09-10T04:24:39.981Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to 酷K.blog</p><h1 id="1-undefined与null的区别（2017-09-02）"><a href="#1-undefined与null的区别（2017-09-02）" class="headerlink" title="1.undefined与null的区别（2017/09/02）"></a>1.undefined与null的区别（2017/09/02）</h1><p>阮一峰的网络日志[<a href="http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html</a>]</p><p>JavaScript的最初版本是这样区分的：null是一个表示”无”的对象，转为数值时为0；undefined是一个表示”无”的原始值，转为数值时为NaN。</p><h1 id="2-touchstart和click执行先后？延迟多少？20170903"><a href="#2-touchstart和click执行先后？延迟多少？20170903" class="headerlink" title="2.touchstart和click执行先后？延迟多少？20170903"></a>2.touchstart和click执行先后？延迟多少？20170903</h1><p>200ms-300ms</p><h1 id="3-回调函数："><a href="#3-回调函数：" class="headerlink" title="3.回调函数："></a>3.回调函数：</h1><p> 把函数b当作参数传递到函数a中，在a中调用函数b  这个函数b就叫做回调函数。</p><h1 id="阻止事件冒泡"><a href="#阻止事件冒泡" class="headerlink" title="阻止事件冒泡"></a>阻止事件冒泡</h1><p>关于阻止事件冒泡，必须使用 e.stopPropagation() 方法</p><h1 id="ajax请求状态码"><a href="#ajax请求状态码" class="headerlink" title="ajax请求状态码"></a>ajax请求状态码</h1><p>200  请求成功<br>304  缓存<br>403  没有操作权限<br>404  没有找到相关资源</p><p>去交让你开心的朋友<br>去爱不会让你流泪流泪的人<br>去向自己想去的方向<br>去完成不论大小的梦想<br>生活应该是美好而又温柔的<br>你也是</p><p>这个项目是多大项目，拿到设计图，分析功能模块及api  在确定时间情况下，在开需求的情况下  大需求看实际情况   小需求1,2天<br>项目经理定需求  沟通ui-出图  前端   后端   </p><p>专业：电子信息科学与技术</p><p>几个框架的区别<br>模块加载是怎么实现的<br>网络协议<br>JS插件选择<br>jQuery版本1.8.3最好用；1.4&amp;1.7最稳定<br>Angular的版本：1.6.4<br>跨域<br>Cookie<br>前后端分离</p><p>项目开发的流程:<br>先有一个需求，拿到需求之后商讨用什么技术实现什么功能，也就是说先得到整个项目的产品图；拿到产品图之后，实现其基本的功能；通过写一些小demo来实现一些功能，测试通过之后写进<br>页面；当UI设计完原型图之后，根据要求添加交互效果；当代码开发完毕之后，放到公司的测试环境中运行，测试运行完毕后，项目即可上线</p><p>公司内的三大环境：<br>本地环境<br>测试环境<br>开发环境（线上环境）—&gt;项目上线以后，需要放到服务器上面运行，此时客户端可访问</p><p>一个项目的开发，主要实现的功能有两点：展示信息和提供服务</p><p>后端在操作数据的时候，会告诉前端哪儿有数据，前端只需要在此处调用接口即可（前端在没和后端做对接之前，先把会用到活的数据的地方写死，拿到数据之后改成活的）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to 酷K.blog&lt;/p&gt;
+&lt;h1 id=&quot;1-undefined与null的区别（2017-09-02）&quot;&gt;&lt;a href=&quot;#1-undefined与null的区别（2017-09-02）&quot; class=&quot;headerlink&quot; title=&quot;1.un
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
